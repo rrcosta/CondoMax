@@ -1,0 +1,25 @@
+# PostgreSQL. Versions 9.1 and up are supported.
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  port: 5432
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['CONDOMAX_DB_USER_DEV'] %>
+  password: <%= ENV['CONDOMAX_DB_PASSWORD_DEV'] %>
+
+development:
+  <<: *default
+  database: CondoMax_development
+  host: localhost
+
+test:
+  <<: *default
+  database: CondoMax_test
+
+production:
+  <<: *default
+  database: CondoMax_production
+  username: <%= ENV['CONDOMAX_DB_USER_PRD'] %>
+  password: <%= ENV['CONDOMAX_DB_PASSWORD_PRD'] %>
