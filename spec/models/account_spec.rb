@@ -12,5 +12,7 @@ RSpec.describe Account, type: :model do
       account.name = nil
       expect(account).not_to be_valid
     end
+
+    it { is_expected.to validate_presence_of(:name) }
   end
 end
