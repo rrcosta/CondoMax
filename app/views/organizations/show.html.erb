@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @organization.account %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @organization.cnpj %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @organization.state %>
+</p>
+
+<p>
+  <strong>State code:</strong>
+  <%= @organization.state_code %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @organization.neighborhood %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @organization.number %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @organization.street %>
+</p>
+
+<p>
+  <strong>Complement:</strong>
+  <%= @organization.complement %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @organization.city %>
+</p>
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>
