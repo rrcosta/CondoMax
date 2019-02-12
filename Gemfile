@@ -27,6 +27,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'rails_semantic_logger'
   gem "lograge"
+  gem 'database_cleaner'
 end
 
 group :development do
