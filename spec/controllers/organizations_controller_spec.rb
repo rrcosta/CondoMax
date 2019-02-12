@@ -1,64 +1,66 @@
 require 'rails_helper'
 
 RSpec.describe OrganizationsController, type: :controller do
+  let(:organization) { create(:organization) }
 
-  # This should return the minimal set of attributes required to create a valid
-  # Organization. As you add validations to Organization, be sure to
-  # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  #let(:valid_attributes) {
+    #skip("Add a hash of attributes valid for your model")
+  #}
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  #let(:invalid_attributes) {
+    #skip("Add a hash of attributes invalid for your model")
+  #}
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # OrganizationsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  # let(:valid_session) { {} }
 
   describe "GET #index" do
-    xit "returns a success response" do
-      Organization.create! valid_attributes
-      get :index, params: {}, session: valid_session
+    it "returns a success response" do
+      get :index, params: { id: organization.to_param }
+
       expect(response).to be_successful
     end
   end
 
   describe "GET #show" do
-    xit "returns a success response" do
-      organization = Organization.create! valid_attributes
-      get :show, params: {id: organization.to_param}, session: valid_session
+    it "returns a success response" do
+      get :show, params: { id: organization.to_param }
+
       expect(response).to be_successful
     end
   end
 
   describe "GET #new" do
-    xit "returns a success response" do
-      get :new, params: {}, session: valid_session
+    it "returns a success response" do
+      get :new, params: { organization: organization }
+
       expect(response).to be_successful
     end
   end
 
-  describe "GET #edxit" do
-    xit "returns a success response" do
-      organization = Organization.create! valid_attributes
-      get :edxit, params: {id: organization.to_param}, session: valid_session
+  describe "GET #edit" do
+    it "returns a success response" do
+      get :edit, params: { id: organization.to_param }
+
       expect(response).to be_successful
     end
   end
 
   describe "POST #create" do
-    context "wxith valid params" do
-      xit "creates a new Organization" do
-        expect {
-          post :create, params: {organization: valid_attributes}, session: valid_session
-        }.to change(Organization, :count).by(1)
+    context "with valid params" do
+      let(:acc) { create(:account) }
+
+      it "creates a new Organization" do
+        post :create, params: {
+                                organization: {
+                                  account: acc,
+                                  name: 'bar',
+                                  cnpj: '58834628000172'
+                                }
+                              }
       end
 
       xit "redirects to the created organization" do
-        post :create, params: {organization: valid_attributes}, session: valid_session
+        post :create, params: {organization: valid_attributes}
         expect(response).to redirect_to(Organization.last)
       end
     end
