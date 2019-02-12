@@ -26,6 +26,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'awesome_print'
   gem 'rails_semantic_logger'
+  gem "lograge"
 end
 
 group :development do
