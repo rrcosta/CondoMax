@@ -24,6 +24,9 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'rails-controller-testing'
+  gem 'awesome_print'
+  gem 'rails_semantic_logger'
+  gem "lograge"
 end
 
 group :development do
