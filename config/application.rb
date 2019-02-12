@@ -29,5 +29,11 @@ module CondoMax
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # semantic_logger configuration
+    config.rails_semantic_logger.semantic   = false
+    config.rails_semantic_logger.started    = true
+    config.rails_semantic_logger.processing = true
+    config.rails_semantic_logger.rendered   = true
   end
 end
